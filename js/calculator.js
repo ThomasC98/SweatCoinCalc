@@ -24,11 +24,7 @@ $(function() {
     if ($("#curBalanceCount").val() >= 0) {
       if ($("#stepsPerDayCount").val() > 1053) {
         if ($("#goalCount").val() > 0) {
-          if ($("#curBalanceCount").val() < $("#goalCount").val()) {
-            $("#calcButton").removeAttr("disabled");
-          } else {
-            $("#calcButton").prop('disabled', true);
-          }
+          $("#calcButton").removeAttr("disabled");
         } else {
           $("#calcButton").prop('disabled', true);
         }
