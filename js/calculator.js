@@ -65,6 +65,10 @@ $(function() {
         earn -= monthFee.get(subType);
         feeLoss += monthFee.get(subType);
       }
+      if(totalDays%4 != 0)
+      {
+        earn += totalDays%4;
+      }
     }
     // console.log(feeLoss, totalDays, totalSteps);
 
