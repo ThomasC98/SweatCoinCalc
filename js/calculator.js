@@ -67,6 +67,10 @@ $(function() {
       }
       if(totalDays%4 != 0)
       {
+      	if(totalDays%4 == 1)
+      	{
+      		earn++;
+      	}
         earn += totalDays%4;
       }
     }
@@ -110,22 +114,6 @@ $(function() {
   }
 
   function init() {
-    // // Implement the progress bar
-    // var bar = new ProgressBar.Circle(container, {
-    //   strokeWidth: 3,
-    //   easing: 'easeInOut',
-    //   duration: 1400,
-    //   color: '#4ffc05',
-    //   trailColor: '#eee',
-    //   trailWidth: 1,
-    //   svgStyle: null
-    // });
-    //
-    // // Test the bar
-    // var ran = Math.random();
-    // console.log(ran);
-    // bar.animate(ran);
-
     $("#curBalanceCount").change(function() {
       checkInputs();
     });
