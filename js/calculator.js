@@ -4,7 +4,6 @@ $(function() {
   var timesClicked = 0;
   var moonCirc = 6783;
   var subType = "mover"; // Base value of the subscriptions
-  var stepsPerCoin = 1053;
   var colors;
   // Maps that hold step information
   var maxEarn = new Map(); // Both maps coordinate with subType
@@ -16,7 +15,7 @@ $(function() {
     subType = $("#subType").val().toLowerCase();
     $("#maxEarn").text(maxEarn.get(subType).toFixed(2));
     $("#monthFee").text(monthFee.get(subType).toFixed(2));
-    $("#maxSteps").text(numberWithCommas(maxEarn.get(subType) * 1053));
+    $("#maxSteps").text(maxEarn.get(subType) * 1053);
   }
 
   // Will enable the buttons if all inputs are filled
@@ -140,10 +139,22 @@ $(function() {
     $("#calcButton").on("click", function() {
       calcSteps();
     });
+    $("#maxSteps").on("click",function()
+    {
+      $("#stepsPerDayCount").val($("#maxSteps").text());
+    })
+
+    $("#curBalanceCount").addClass("is-dirty");
+    $("#goalCount").addClass("is-dirty");
+    $("#stepsPerDayCount").addClass("is-dirty");
+    $("#curBalanceCount").val(0);
+    $("#goalCount").val(20000);
+    $("#stepsPerDayCount").val(5265);
 
     $("#todayDate").text(new Date().toJSON().slice(0, 10));
 
     colors = ["#4ffc05", "#edfc11", "#fe7509", "#fe0900"];
+
 
     maxEarn.set("mover", 5.00);
     maxEarn.set("shaker", 10.00);

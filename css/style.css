@@ -1,48 +1,101 @@
+
 body {
   background-color: #1e2951;
   color: white;
 }
 
-#card {
-  width: 30rem;
-  height: 30rem;
-  margin-left: 65%;
-  position: absolute !important;
+/* Title Field CSS*/
+h1, h2 {
+  padding-left: 3%;
+  font-size:3em;
+}
+h2
+{
+  font-size:2em;
 }
 
-#container {
-  position: absolute !important;
-  width: 31rem;
-  height: 31rem;
-  top: 20%;
-  margin-left: 64.6%;
+/*Input Field CSS*/
+#inputFields {
+  width: 60em;
+  
+  margin-left: 5em;
+  background-color: #334587;
+  border-radius: 2em;
+  padding: 2em;
+  float:left;
 }
-#moonText
+
+#fieldTitle {
+  text-align: center;
+  font-style: italic;
+  font-size: 2.5em;
+}
+
+#inputText {
+  font-size: 2em;
+}
+
+.mdl-button {
+  background-color: #425bb7;
+  color: white;
+  float: right;
+}
+
+.mdl-button:hover {
+  background-color: #31458c;
+}
+
+#feeField
 {
-  position: absolute !important;
-  text-align:center;
-  margin-left: 63%;
-  top: 70%;
+  padding-top:.5em;
+  padding-bottom:.5em;
+}
+
+#inputFields * span,p
+{
+  font-size: 1em;
+}
+
+/*Moon Field CSS*/
+
+#moonField
+{
+  width:30em;
+  float:left;
+  margin-left:20em;
+}
+
+#card {
+  width: 30em;
+  height: 30em;
+  margin-right:50%;
 }
 
 #moon, #darkSide {
-  width: 30rem;
-  height: 30rem;
+  width: 90%;
+  height: 90%;
 }
 
-#inputFields {
-  width: 50%;
-  margin-left: 4%;
-  background-color: #334587;
-  border-radius: 25px;
-  padding: 2%;
-  padding-bottom: 3%;
+#container
+{
+  position:absolute;
+  width: 27em;
+  height: 27em;
 }
+#moonText
+{
+  text-align:center;
+  font-size:1.25em;
+}
+
+
+
+/*Calc Field CSS*/
 
 #calcFields {
-  width: 58%;
-  margin-left: 2.5%;
-  margin-top: 1%;
+  width: 67.5em;
+  margin-left: 3.5em;
+  margin-top: 1em;
 }
 
 #exportNumField {
@@ -50,70 +103,36 @@ body {
   width: 48%;
   height: 26%;
   background-color: #334587;
-  border-radius: 25px;
+  border-radius: 2em;
   padding: .5%;
   padding-left: 1%;
   padding-right: 1%;
 }
 
 #exportDateField {
-  float: right;
+  float: left;
   width: 48%;
   height: 26%;
   margin-left: 1%;
   background-color: #334587;
-  border-radius: 25px;
+  border-radius: 2em;
   padding: .5%;
 }
-
-.mdl-button {
-  background-color: #425bb7;
-  color: white;
-  float: right;
-  padding-bottom: 2%;
-}
-
-.mdl-button:hover {
-  background-color: #31458c;
-}
-
-.mdl-textfield__input, .mdl-textfield__label {
-  font-size: 1.5rem;
-  width: 45%;
-}
-
-#fieldTitle {
-  text-align: center;
-  font-style: italic;
-  font-size: 2.75rem;
-  padding-bottom: 1%;
+#outputText, #inputDisplay  {
+  font-size: 2em;
 }
 
 #calcTitle {
   padding-top: 2%;
   text-align: center;
   font-style: italic;
-  font-size: 2.75rem;
+  font-size: 2.75em;
 }
 
-#goalDiff, #feeLoss, #totalDays,
-#totalEarn, #totalSteps, #totalDistance,
-#totalSteps, #todayDate, #daysWalking, #calcDate {
+#outputText * span{
   float: right;
 }
 
-#inputText {
-  font-size: 2rem;
-}
-
-p {
-  font-size: 1.75rem;
-}
-
-h1, h2 {
-  padding-left: 3%;
-}
-h2
-{
-  font-size:1.75rem;
+#inputDisplay * span{
+  float: right;
 }

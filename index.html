@@ -1,5 +1,4 @@
 <html>
-
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
@@ -21,82 +20,85 @@
     <h2>Find the time it would take you to complete your SweatCoin&#8482; goal</h2>
   </div>
 
-  <div id="moonField">
-    <div id="container"></div>
-    <div id="card">
-      <div class="front">
-        <image src="images/moon.png" id="moon">
-      </div>
-      <div class="back">
-        <image src="images/darkSideMoon.png" id="darkSide" style="display: none;">
-      </div>
-    </div>
-    <p id= "moonText">That's <span id="circPercent">0.00</span>% the circumference of the Moon</p>
-  </div>
-
-  <div id="inputFields">
-    <p id="fieldTitle">Input Values</p>
-    <div id="inputText">
-      <div id="balanceField">
-        <span>Current Balance: </span>
-        <div class="mdl-textfield mdl-js-textfield">
-          <input class = "mdl-textfield__input" type = "text"pattern = "-?[0-9]*(\.[0-9]+)?" id="curBalanceCount">
-          <label class = "mdl-textfield__label" for = "text5">Number...</label>
-          <span class = "mdl-textfield__error">Number required!</span>
-        </div>
-      </div>
-
-      <div id="subscriptionField">
-        <span>Current Subscription: </span>
-        <div class="mdl-textfield mdl-js-textfield getmdl-select">
-          <input type="text" value="" class="mdl-textfield__input" id="subType" readonly>
-          <input type="hidden" value="" name="subType">
-          <label for="subType" class="mdl-textfield__label">Mover</label>
-          <ul for="subType" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-            <li class="mdl-menu__item" data-val="mover">Mover</li>
-            <li class="mdl-menu__item" data-val="shaker">Shaker</li>
-            <li class="mdl-menu__item" data-val="quaker">Quaker</li>
-            <li class="mdl-menu__item" data-val="breaker">Breaker</li>
-            <!-- <li class="mdl-menu__item" data-val="troubleMaker" disabled>Trouble Maker</li> -->
-          </ul>
-        </div>
-        <span>Max Earn: <span id="maxEarn">5.00</span>/day</span>
-      </div>
-
-      <div id="feeField">
-        <p>Monthly Fee (In SweatCoins): <span id="monthFee">4.75</span>/month</p>
-      </div>
-
-      <!-- A person's steps can either be considered max or not  -->
-      <div id="stepField">
-        <span id ="stepsPerDay">Steps per Day: </span>
-        <div class="mdl-textfield mdl-js-textfield">
-          <input class = "mdl-textfield__input" type = "text" pattern = "-?[0-9]*(\.[0-9]+)?" id = "stepsPerDayCount">
-          <label class = "mdl-textfield__label" for = "text5">Number...</label>
-          <span class = "mdl-textfield__error">Number required!</span>
-        </div>
-        <span>Max Steps: <span id="maxSteps">5,265</span></span>
-      </div>
-
-      <div id="goalField">
-        <span>Goal Balance: </span>
-        <div class="mdl-textfield mdl-js-textfield">
-          <input class = "mdl-textfield__input" type = "text" pattern = "-?[0-9]*(\.[0-9]+)?" id = "goalCount">
-          <label class = "mdl-textfield__label" for = "text5">Number...</label>
-          <span class = "mdl-textfield__error">Number required!</span>
-        </div>
-      </div>
+  <div id="midWrapper">
+    <div id="inputFields">
+          <p id="fieldTitle">Input Values</p>
+          <div id="inputText">
+            <div id="balanceField">
+              <span>Current Balance: </span>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class = "mdl-textfield__input" type = "text"pattern = "-?[0-9]*(\.[0-9]+)?" id="curBalanceCount">
+                <label class = "mdl-textfield__label" for = "text5">Number...</label>
+                <span class = "mdl-textfield__error">Number required!</span>
+              </div>
+            </div>
+      
+            <div id="subscriptionField">
+              <span>Current Subscription: </span>
+              <div class="mdl-textfield mdl-js-textfield getmdl-select">
+                <input type="text" value="" class="mdl-textfield__input" id="subType" readonly>
+                <input type="hidden" value="" name="subType">
+                <label for="subType" class="mdl-textfield__label">Select Subscription</label>
+                <ul for="subType" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                  <li class="mdl-menu__item" data-val="mover">Mover</li>
+                  <li class="mdl-menu__item" data-val="shaker">Shaker</li>
+                  <li class="mdl-menu__item" data-val="quaker">Quaker</li>
+                  <li class="mdl-menu__item" data-val="breaker">Breaker</li>
+                  <!-- <li class="mdl-menu__item" data-val="troubleMaker" disabled>Trouble Maker</li> -->
+                </ul>
+              </div>
+              <span>Max Earn: <span id="maxEarn">#.##</span>/day</span>
+            </div>
+      
+            <div id="feeField">
+              <span>Monthly Fee (In SweatCoins): <span id="monthFee">#.##</span>/month</span>
+            </div>
+      
+            <!-- A person's steps can either be considered max or not  -->
+            <div id="stepField">
+              <span id ="stepsPerDay">Steps per Day: </span>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class = "mdl-textfield__input" type = "text" pattern = "-?[0-9]*(\.[0-9]+)?" id = "stepsPerDayCount">
+                <label class = "mdl-textfield__label" for = "text5">Number...</label>
+                <span class = "mdl-textfield__error">Number required!</span>
+              </div>
+              <span>Max Steps: <span id="maxSteps">5265</span></span>
+            </div>
+      
+            <div id="goalField">
+              <span>Goal Balance: </span>
+              <div class="mdl-textfield mdl-js-textfield">
+                <input class = "mdl-textfield__input" type = "text" pattern = "-?[0-9]*(\.[0-9]+)?" id = "goalCount">
+                <label class = "mdl-textfield__label" for = "text5">Number...</label>
+                <span class = "mdl-textfield__error">Number required!</span>
+              </div>
+            </div>
+          </div>
+      
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accentmdl-button--colored" id="calcButton" disabled>
+            Calculate
+          </button>
     </div>
 
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accentmdl-button--colored" id="calcButton" disabled>
-      Calculate
-    </button>
+    <div id="moonField">
+      <div id="card">
+        <div id="container"></div>
+        <div class="front">
+          <image src="images/moon.png" id="moon">
+        </div>
+        <div class="back">
+          <image src="images/darkSideMoon.png" id="darkSide" style="display: none;">
+        </div>
+      </div>
+      <p id="moonText">That's <span id="circPercent">0.00</span>% the circumference of the Moon</p>
+    </div>
   </div>
+  
 
   <div id="calcFields">
     <div id="exportNumField">
       <p id="calcTitle">Calculated Values</p>
-      <div id="inputText">
+      <div id="inputDisplay">
         <p>(Goal - Current):<span id = "goalDiff">0.00</span></p>
         <p>Lost From Fees:<span id = "feeLoss">0.00</span></p>
         <p>Earning Total:<span id = "totalEarn">0.00</span></p>
@@ -106,9 +108,11 @@
     </div>
     <div id="exportDateField">
       <p id="calcTitle">Calculated Dates</p>
-      <p>Today's Date: <span id = "todayDate"></span></p>
-      <p>Days of Walking: <span id = "totalDays"></span></p>
-      <p>Completion Date: <span id = "calcDate"></span></p>
+      <div id="outputText">
+        <p>Today's Date: <span id = "todayDate"></span></p>
+        <p>Days of Walking: <span id = "totalDays"></span></p>
+        <p>Completion Date: <span id = "calcDate"></span></p>
+    </div>
     </div>
   </div>
 
