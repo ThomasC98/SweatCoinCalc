@@ -5,13 +5,14 @@ body {
 }
 
 /* Title Field CSS*/
-h1, h2 {
-  padding-left: 3%;
+h1 {
+  padding-left: 2em;
   font-size:3em;
 }
 h2
 {
   font-size:2em;
+  padding-left: 3em;
 }
 
 /*Input Field CSS*/
