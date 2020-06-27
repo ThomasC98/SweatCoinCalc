@@ -137,3 +137,11 @@ h2
 #inputDisplay * span{
   float: right;
 }
+#max_steps
+{
+  font-weight:bold;
+}
+#max_steps:hover{
+  color:rgb(255, 151, 151);
+  cursor: pointer;
+}

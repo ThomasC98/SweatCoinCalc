@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
 
   // All necessary values
   var timesClicked = 0;
@@ -15,7 +15,15 @@ $(function() {
     subType = $("#subType").val().toLowerCase();
     $("#maxEarn").text(maxEarn.get(subType).toFixed(2));
     $("#monthFee").text(monthFee.get(subType).toFixed(2));
-    $("#maxSteps").text(maxEarn.get(subType) * 1053);
+    $("#max_steps").text(maxEarn.get(subType) * 1053);
+    if(subType==="trouble maker")
+    {
+      $("#fee_msg").text("(In U.S. $$$)")
+    }
+    else
+    {
+      $("#fee_msg").text("In Sweatcoins")
+    }
   }
 
   // Will enable the buttons if all inputs are filled
@@ -41,7 +49,6 @@ $(function() {
     var goal = Number($("#goalCount").val());
     subType = $("#subType").val().toLowerCase();
 
-
     var earn = 0;
     var feeLoss = 0;
     var totalDays = 0;
@@ -52,27 +59,27 @@ $(function() {
     }
     var earnDaily = stepsPerDay / 1053;
 
-    // console.log(subType, balance, stepsPerDay, goal);
-    // console.log(earnDaily, maxEarn.get(subType), monthFee.get(subType));
-
     while (balance + earn <= goal) {
       totalDays += 1;
       totalSteps += stepsPerDay;
       earn += earnDaily;
 
       if (totalDays % 30 == 0) {
-        earn -= monthFee.get(subType);
+        
+        if(subType != "trouble maker")
+          earn -= monthFee.get(subType);
+        
         feeLoss += monthFee.get(subType);
       }
-      if(totalDays%4 != 0)
-      {
-      	if(totalDays%4 == 1)
-      	{
-      		earn++;
-      	}
-        earn += totalDays%4;
+      
+      if (totalDays % 4 != 0) {
+        if (totalDays % 4 == 1) {
+          earn++;
+        }
+        earn += totalDays % 4;
       }
     }
+    
     // console.log(feeLoss, totalDays, totalSteps);
 
     $("#goalDiff").text(numberWithCommas((goal - balance).toFixed(2)));
@@ -113,21 +120,21 @@ $(function() {
   }
 
   function init() {
-    $("#curBalanceCount").change(function() {
+    $("#curBalanceCount").change(function () {
       checkInputs();
     });
-    $("#stepsPerDayCount").change(function() {
+    $("#stepsPerDayCount").change(function () {
       checkInputs();
     });
-    $("#goalCount").change(function() {
+    $("#goalCount").change(function () {
       checkInputs();
     });
-    $("#subType").change(function() {
+    $("#subType").change(function () {
       changeSubProperties();
       checkInputs();
     });
 
-    $("#moon").on("click", function() {
+    $("#container").on("click", function () {
       if (timesClicked == 6) {
         $("#card").flip();
         $("#darkSide").show();
@@ -136,12 +143,11 @@ $(function() {
       }
     });
 
-    $("#calcButton").on("click", function() {
+    $("#calcButton").on("click", function () {
       calcSteps();
     });
-    $("#maxSteps").on("click",function()
-    {
-      $("#stepsPerDayCount").val($("#maxSteps").text());
+    $("#max_steps").on("click", function () {
+      $("#stepsPerDayCount").val($("#max_steps").text());
     })
 
     $("#curBalanceCount").addClass("is-dirty");
@@ -160,11 +166,13 @@ $(function() {
     maxEarn.set("shaker", 10.00);
     maxEarn.set("quaker", 15.00);
     maxEarn.set("breaker", 20.00);
+    maxEarn.set("trouble maker", 50.00);
 
     monthFee.set("mover", 0.00);
     monthFee.set("shaker", 4.75);
     monthFee.set("quaker", 20.00);
     monthFee.set("breaker", 30.00);
+    monthFee.set("trouble maker", 1.00);
   }
 
 });
