@@ -1,4 +1,3 @@
-
 body {
   background-color: #1e2951;
   color: white;
@@ -7,23 +6,23 @@ body {
 /* Title Field CSS*/
 h1 {
   padding-left: 2em;
-  font-size:3em;
+  font-size: 3em;
 }
-h2
-{
-  font-size:2em;
+
+h2 {
+  font-size: 2em;
   padding-left: 3em;
 }
 
 /*Input Field CSS*/
 #inputFields {
   width: 60em;
-  
+
   margin-left: 5em;
   background-color: #334587;
   border-radius: 2em;
   padding: 2em;
-  float:left;
+  float: left;
 }
 
 #fieldTitle {
@@ -46,24 +45,22 @@ h2
   background-color: #31458c;
 }
 
-#feeField
-{
-  padding-top:.5em;
-  padding-bottom:.5em;
+#feeField {
+  padding-top: .5em;
+  padding-bottom: .5em;
 }
 
-#inputFields * span,p
-{
+#inputFields * span,
+p {
   font-size: 1em;
 }
 
 /*Moon Field CSS*/
 
-#moonField
-{
-  width:30em;
-  float:left;
-  padding-left:21em;
+#moonField {
+  width: 30em;
+  float: left;
+  padding-left: 21em;
 }
 
 #card {
@@ -71,21 +68,21 @@ h2
   height: 30em;
 }
 
-#moon, #darkSide {
+#moon,
+#darkSide {
   width: 30em;
   height: 30em;
 }
 
-#container
-{
-  position:absolute;
+#container {
+  position: absolute;
   width: 30em;
   height: 30em;
 }
-#moonText
-{
-  text-align:center;
-  font-size:2.5em;
+
+#moonText {
+  text-align: center;
+  font-size: 2.5em;
   line-height: 1em;
 }
 
@@ -98,8 +95,9 @@ h2
   margin-left: 3.5em;
   margin-top: 1em;
 }
-#exportNumField, #exportDateField
-{
+
+#exportNumField,
+#exportDateField {
   float: left;
   width: 32.25em;
   height: 17.5em;
@@ -119,7 +117,9 @@ h2
   border-radius: 2em;
   padding: .5em;
 }
-#outputText, #inputDisplay  {
+
+#outputText,
+#inputDisplay {
   font-size: 2em;
 }
 
@@ -130,18 +130,19 @@ h2
   font-size: 2.75em;
 }
 
-#outputText * span{
+#outputText * span {
   float: right;
 }
 
-#inputDisplay * span{
+#inputDisplay * span {
   float: right;
 }
-#max_steps
-{
-  font-weight:bold;
+
+#max_steps {
+  font-weight: bold;
 }
-#max_steps:hover{
-  color:rgb(255, 151, 151);
+
+#max_steps:hover {
+  color: rgb(255, 151, 151);
   cursor: pointer;
 }

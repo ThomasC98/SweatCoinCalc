@@ -16,12 +16,9 @@ $(function () {
     $("#maxEarn").text(maxEarn.get(subType).toFixed(2));
     $("#monthFee").text(monthFee.get(subType).toFixed(2));
     $("#max_steps").text(maxEarn.get(subType) * 1053);
-    if(subType==="trouble maker")
-    {
+    if (subType === "trouble maker") {
       $("#fee_msg").text("(In U.S. $$$)")
-    }
-    else
-    {
+    } else {
       $("#fee_msg").text("In Sweatcoins")
     }
   }
@@ -65,13 +62,13 @@ $(function () {
       earn += earnDaily;
 
       if (totalDays % 30 == 0) {
-        
-        if(subType != "trouble maker")
+
+        if (subType != "trouble maker")
           earn -= monthFee.get(subType);
-        
+
         feeLoss += monthFee.get(subType);
       }
-      
+
       if (totalDays % 4 != 0) {
         if (totalDays % 4 == 1) {
           earn++;
@@ -79,8 +76,7 @@ $(function () {
         earn += totalDays % 4;
       }
     }
-    
-    // console.log(feeLoss, totalDays, totalSteps);
+
 
     $("#goalDiff").text(numberWithCommas((goal - balance).toFixed(2)));
     $("#feeLoss").text(numberWithCommas(feeLoss.toFixed(2)));
@@ -92,6 +88,7 @@ $(function () {
     futureDate.setDate(futureDate.getDate() + totalDays);
     $("#totalDays").text(numberWithCommas(totalDays));
     $("#calcDate").text(futureDate.toJSON().slice(0, 10));
+    $("#calcMileDay").text(numberWithCommas(((totalSteps / 2000) / totalDays).toFixed(2)));
 
     animateBar((totalSteps / 2000) / moonCirc);
   }
