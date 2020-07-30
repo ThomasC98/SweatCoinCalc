@@ -9,8 +9,6 @@ $(function () {
   var maxEarn = new Map(); // Both maps coordinate with subType
   var monthFee = new Map();
 
-  init();
-
   function changeSubProperties() {
     subType = $("#subType").val().toLowerCase();
     $("#maxEarn").text(maxEarn.get(subType).toFixed(2));
@@ -19,7 +17,7 @@ $(function () {
     if (subType === "trouble maker") {
       $("#fee_msg").text("(In U.S. $$$)")
     } else {
-      $("#fee_msg").text("In Sweatcoins")
+      $("#fee_msg").text("(In Sweatcoins)")
     }
   }
 
@@ -55,6 +53,9 @@ $(function () {
       stepsPerDay = maxEarn.get(subType) * 1053;
     }
     var earnDaily = stepsPerDay / 1053;
+    if (subType == "trouble maker") {
+      earnDaily *= 2;
+    }
 
     while (balance + earn <= goal) {
       totalDays += 1;
@@ -143,6 +144,7 @@ $(function () {
     $("#calcButton").on("click", function () {
       calcSteps();
     });
+
     $("#max_steps").on("click", function () {
       $("#stepsPerDayCount").val($("#max_steps").text());
     })
@@ -171,5 +173,7 @@ $(function () {
     monthFee.set("breaker", 30.00);
     monthFee.set("trouble maker", 1.00);
   }
+
+  init();
 
 });
